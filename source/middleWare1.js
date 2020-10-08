@@ -7,7 +7,7 @@ app.use((req, res, next) => {
   console.log('中间件 MiddleWare')
   let {token} = req.query
   if(token) {    
-    next() // 在合适的地方，继续往下执行
+    next() // 在合适的地方，继续往下执行 next()
   }else{
     res.send('Token Not OK')  // 不会 继续往下执行
   }
