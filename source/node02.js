@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
-const appRouter = express.Router()
+// const appRouter = express.Router()
 
 const bodyParser = require('body-parser')
-// 使用 GET 方法，并且在Body内 使用form-urlencoded格式的数据作为参数
+// 使用 POST 方法，并且在Body内 使用form-urlencoded格式的数据作为参数
 app.use(bodyParser.urlencoded({ extended: false }))
 // 使用 POST 方法，并且在Body内 使用JSON格式的数据作为参数
 app.use(bodyParser.json())

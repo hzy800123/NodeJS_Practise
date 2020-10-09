@@ -27,47 +27,7 @@ const userSchema = new Schema({
 
 // (3) 将 schema对象 转换为 数据模型
 // 该 schema数据对象 和 集合关联collection ('集合名', schema对象)
-const user = mongoose.model('User', userSchema)
+const userModel = mongoose.model('User', userSchema)
 
 
-// (4) 操作数据库
-
-// 插入
-user.insertMany({user: 'wantyi', password: '123', age:16})
-.then((data) => {
-  console.log(data)
-  console.log('--- 插入成功 ---')
-})
-.catch((err) => {
-  console.log('--- 插入失败 ---')
-})
-
-// 查询
-user.find({age:17})
-.then((data) => {
-  console.log(data)
-  console.log('--- 查询成功 ---')
-})
-.catch((err) => {
-  console.log('--- 查询失败 ---')
-})
-
-// 删除
-user.deleteMany({age:17})
-.then((data) => {
-  console.log(data)
-  console.log('--- 删除成功 ---')
-})
-.catch((err) => {
-  console.log('--- 删除失败 ---')
-})
-
-// 更新
-user.updateMany({age: {$gte:17}}, {password: '456'})
-.then((data) => {
-  console.log(data)
-  console.log('--- 更新成功 ---')
-})
-.catch((err) => {
-  console.log('--- 更新失败 ---')
-})
+module.exports = userModel
